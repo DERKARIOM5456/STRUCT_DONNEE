@@ -18,4 +18,5 @@
     int NbrElemListe(TypeCellule*);
     int* CreatTabListe(TypeCellule*);
     TypeCellule* ListeInverse(TypeCellule*);
+    TypeCellule* RecopieListe(TypeCellule*);
 #endif

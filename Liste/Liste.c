@@ -147,3 +147,15 @@ TypeCellule* ListeInverse(TypeCellule* l)
     }
     return inverseL;
 }
+TypeCellule* RecopieListe(TypeCellule* l)
+{
+    TypeCellule *inverseL,*ptr;
+    inverseL = ListeVide();
+    ptr = l;
+    while(ptr != NULL)
+    {
+        inverseL=InsereEnQueu(inverseL,ptr->donnee);
+        ptr = ptr->suivant;
+    }
+    return inverseL;
+}

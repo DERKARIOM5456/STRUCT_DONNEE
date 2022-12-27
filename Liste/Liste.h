@@ -12,4 +12,7 @@
     TypeCellule* SuppEnTete(TypeCellule*);
     TypeCellule* SuppEnQueu(TypeCellule*);
     void Affichage(TypeCellule*);
+    int SommeListe(TypeCellule*);
+    TypeCellule* Recherche(TypeCellule*,int);
+    TypeCellule* CreatListeTab(int*,int);
 #endif

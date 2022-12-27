@@ -25,10 +25,15 @@ TypeCellule* InsereEnQueu(TypeCellule* l ,int donne)
     nouveau = (TypeCellule*)malloc(sizeof(TypeCellule));
     nouveau->donnee = donne;
     nouveau->suivant = NULL;
-    ptr = l;
-    while (ptr->suivant != NULL)
-        ptr = ptr->suivant;
-    ptr->suivant = nouveau;
+    if (EstListeVide(l))
+        return nouveau;
+    else
+    {    
+        ptr = l;
+        while (ptr->suivant != NULL)
+            ptr = ptr->suivant;
+        ptr->suivant = nouveau;
+    }
     return l;
 }
 TypeCellule* SuppEnTete(TypeCellule* l)
@@ -72,4 +77,36 @@ void Affichage(TypeCellule* l)
         printf("[%d]\t",ptr->donnee);
         ptr = ptr->suivant;
     }
+}
+int SommeListe(TypeCellule* l)
+{
+    TypeCellule *ptr;
+    int s=0;
+    ptr = l;
+    while(ptr != NULL)
+    {
+        s += ptr->donnee;
+        ptr = ptr->suivant;
+    }
+    return s;
+}
+TypeCellule* Recherche(TypeCellule* l,int n)
+{
+    TypeCellule *ptr;
+    ptr = l;
+    while(ptr != NULL)
+    {
+        if(ptr->donnee == n)
+            return ptr;
+        ptr = ptr->suivant;
+    }
+    return NULL;
+}
+TypeCellule* CreatListeTab(int *tab , int n)
+{
+    TypeCellule *l = ListeVide();
+    int i;
+    for(i=0;i<n;i++)
+        l = InsereEnQueu(l,tab[i]);
+    return l;
 }

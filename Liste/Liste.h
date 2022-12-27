@@ -15,4 +15,6 @@
     int SommeListe(TypeCellule*);
     TypeCellule* Recherche(TypeCellule*,int);
     TypeCellule* CreatListeTab(int*,int);
+    int NbrElemListe(TypeCellule*);
+    int* CreatTabListe(TypeCellule*);
 #endif

@@ -110,3 +110,28 @@ TypeCellule* CreatListeTab(int *tab , int n)
         l = InsereEnQueu(l,tab[i]);
     return l;
 }
+int NbrElemListe(TypeCellule* l)
+{
+    TypeCellule *ptr;
+    int nbrelem=0;
+    ptr = l;
+    while(ptr != NULL)
+    {
+        nbrelem++;
+        ptr = ptr->suivant;
+    }
+    return nbrelem;
+}
+int* CreatTabListe(TypeCellule* l)
+{
+    int *tab = (int*)malloc(sizeof(int)*NbrElemListe(l));
+    TypeCellule *ptr;
+    int i=0;
+    while (ptr != NULL)
+    {
+        tab[i] = ptr->donnee;
+        i++;
+        ptr = ptr->suivant;
+    }
+    return tab;
+}

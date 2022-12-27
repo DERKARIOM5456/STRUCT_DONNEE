@@ -135,3 +135,15 @@ int* CreatTabListe(TypeCellule* l)
     }
     return tab;
 }
+TypeCellule* ListeInverse(TypeCellule* l)
+{
+    TypeCellule *inverseL,*ptr;
+    inverseL = ListeVide();
+    ptr = l;
+    while(ptr != NULL)
+    {
+        inverseL=InsereEnTete(inverseL,ptr->donnee);
+        ptr = ptr->suivant;
+    }
+    return inverseL;
+}

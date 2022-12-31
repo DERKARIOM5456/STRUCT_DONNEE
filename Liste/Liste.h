@@ -19,4 +19,9 @@
     int* CreatTabListe(TypeCellule*);
     TypeCellule* ListeInverse(TypeCellule*);
     TypeCellule* RecopieListe(TypeCellule*);
+    TypeCellule* SuppX(TypeCellule*,int);
+    int NbrX(TypeCellule*,int);
+    TypeCellule* SuppXX(TypeCellule*,int);
+    TypeCellule* ConcatListe(TypeCellule*,TypeCellule*);
+    TypeCellule* ConcatListePlus(TypeCellule*,TypeCellule*);
 #endif

@@ -15,7 +15,7 @@ int NbreElmDListe(dliste);
 dliste TrieDListe(dliste);
 dliste InsereEnTeteDL(dliste,int);
 dliste InsereEnQueueDL(dliste,int);
-dliste InsereEnPosition(dliste,int,int);
+dliste InsereEnPositionDL(dliste,int,int);
 dliste SuppEnTeteDL(dliste);
 dliste SuppEnQueuDL(dliste);
 dliste SuppEnPositionDL(dliste,int);
@@ -23,5 +23,5 @@ void AffichageDL(dliste);
 void RechercheDL(dliste,int);
 dliste ConcatDlistePlus(dliste,dliste);
 dliste ConvertListeInDListe(TypeCellule*);
-void ClearDListe(dliste);
+dliste ClearDListe(dliste);
 #endif

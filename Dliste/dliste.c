@@ -3,13 +3,12 @@
 #include "dliste.h"
 dliste DListeVide()
 { 
-    dliste ll = (dliste)malloc(sizeof(dliste));
-    ll = NULL;
-    return ll;
+    dliste l=NULL;
+    return l;
 }
 int EstDListeVide(dliste ll)
 {
-    return (ll->back == NULL);
+    return (ll == NULL);
 }
 /*int EstDListeTrier()
 {
@@ -24,30 +23,41 @@ void SommetDListe(dliste ll,int* donnee)
 }
 int NbreElmDListe(dliste ll)
 {
-    if(EstDListeVide(ll))
+    if(ll==NULL)
         return 0;
-    int i;
+    int i=0;
     dliste ptr;
-    for(i=0,ptr=ll;ptr!=NULL;ptr=ptr->next,i++);
+    for(ptr=ll;ptr!=NULL;ptr=ptr->next)
+        i++;
     return i;
 }
 dliste InsereEnTeteDL(dliste ll,int donnee)
 {
-    dliste elm = DListeVide();
+    dliste elm = (dliste)malloc(sizeof(dliste));
     elm->donnee = donnee;
     elm->back = NULL;
-    ll->back = elm;
-    elm->next = ll;
-    ll = elm;
+    if(ll==NULL)
+    {
+        elm->next = NULL;
+        ll = elm;
+    }
+    else
+    {
+        ll->back = elm;
+        elm->next = ll;
+        ll = elm;
+    }
     return ll;
 }
 dliste InsereEnQueueDL(dliste ll,int donnee)
 {
-    dliste elm = DListeVide();
+    dliste elm = (dliste)malloc(sizeof(dliste));
     elm->donnee = donnee;
     elm->next = NULL;
-    if(EstDListeVide(ll))
+    if(ll==NULL)
+    {
         return InsereEnTeteDL(ll,donnee);
+    }
     else
     {
         dliste ptr = ll;
@@ -55,8 +65,8 @@ dliste InsereEnQueueDL(dliste ll,int donnee)
             ptr = ptr->next;
         elm->back = ptr;
         ptr->next = elm;
-            return ll;
-    }
+        return ll;
+    } 
 }
 dliste InsereEnPositionDL(dliste ll ,int donnee,int pos)
 {
@@ -64,7 +74,7 @@ dliste InsereEnPositionDL(dliste ll ,int donnee,int pos)
         return InsereEnTeteDL(ll,donnee);
     else
     {
-        if(pos==NbreElmDListe(ll)+1)
+        if(pos>NbreElmDListe(ll))
             return InsereEnQueueDL(ll,donnee);
         else
         {
@@ -78,7 +88,8 @@ dliste InsereEnPositionDL(dliste ll ,int donnee,int pos)
             }
             elm->next = ptr;
             elm->back = s;
-            s = elm;
+            s->next = elm;
+            ptr->back = elm;
             return ll;
         }
     }
@@ -140,6 +151,8 @@ dliste SuppEnPositionDL(dliste ll,int pos)
 void AffichageDL(dliste ll)
 {
     dliste ptr = ll;
+    if(EstDListeVide(ll))
+        printf("\nListe Vide");
     printf("\n");
     while (ptr!=NULL)
     {
@@ -161,7 +174,7 @@ void RechercheDL(dliste ll,int donnee)
     if(ptr==NULL)
         printf("\nL'element n'existe pas");
     else
-        printf("\nL'element %d se trouve a la position %d",donnee,i);
+        printf("\nL'element %d se trouve a la position %d",donnee,i+1);
 }
 dliste ConcatDlistePlus(dliste ll,dliste ll1)
 {
@@ -174,6 +187,7 @@ dliste ConcatDlistePlus(dliste ll,dliste ll1)
             ptr = ptr->next;
         ll1->back = ptr;
         ptr->next = ll1;
+        ll1=ll;
     }
     return ll1;
 }
@@ -188,13 +202,14 @@ dliste ConvertListeInDListe(TypeCellule* l)
     }
     return ll;
 }
-void ClearDListe(dliste ll)
+dliste ClearDListe(dliste ll)
 {
-    dliste ptr = ll;
+    dliste ptr;
     while(ll!=NULL)
     {
         ptr = ll;
         ll = ll->next;
         free(ptr);
     }
+    return ll;
 }

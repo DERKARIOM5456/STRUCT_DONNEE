@@ -1,13 +1,13 @@
 #ifndef PILE_H
 #define PILE_H
-    typedef struct cell
+    typedef struct Pcell
     {
         int donnee;
-        struct cell *suivant;
+        struct Pcell *suivant;
     }Pile;
     Pile* PileVide();
     int EstPileVide(Pile*);
-    int Sommet(Pile*);
+    int sommet(Pile*);
     Pile* Empiler(Pile*,int);
     Pile* Depiler(Pile*);
     Pile* Nettoyer(Pile*);

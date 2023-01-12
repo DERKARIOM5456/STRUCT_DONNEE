@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
-#include "GrapheListeAdjacense.h"
+#include "../include/GrapheListeAdjacense.h"
 Graphe *MatriceAdjacense(TypeGraphe G)
 {
 	int i;

@@ -1,3 +1,6 @@
 test.c
 prog
 .vscode/*
+VisioStruct/DEBIAN
+VisioStruct/usr/lib
+VisioStruct/usr/bin

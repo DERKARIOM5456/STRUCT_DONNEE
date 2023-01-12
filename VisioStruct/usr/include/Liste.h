@@ -1,9 +1,9 @@
 #ifndef LISTE_H
 #define LISTE_H
-    typedef struct cell
+    typedef struct Lcell
     {
         int donnee;
-        struct cell* suivant;
+        struct Lcell* suivant;
     }TypeCellule;
     TypeCellule* ListeVide();
     int EstListeVide(TypeCellule*);

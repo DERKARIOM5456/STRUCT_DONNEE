@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "Liste.h"
+#include "../include/Liste.h"
 TypeCellule* ListeVide()
 {
     TypeCellule* l;
@@ -127,6 +127,7 @@ int* CreatTabListe(TypeCellule* l)
     int *tab = (int*)malloc(sizeof(int)*NbrElemListe(l));
     TypeCellule *ptr;
     int i=0;
+    ptr=l;
     while (ptr != NULL)
     {
         tab[i] = ptr->donnee;
@@ -180,7 +181,7 @@ TypeCellule* SuppX(TypeCellule* l , int donnee)
                 ptr1 = ptr1->suivant;
                 ptr2 = ptr2->suivant;
             }
-            if(ptr2->donnee = donnee)
+            if(ptr2->donnee == donnee)
             {
                 ptr1->suivant = ptr2->suivant;
                 free(ptr2);

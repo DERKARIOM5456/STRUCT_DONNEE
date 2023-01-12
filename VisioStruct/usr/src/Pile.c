@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "Pile.h"
+#include "../include/Pile.h"
 Pile* PileVide()
 {
     Pile *p;
@@ -11,7 +11,7 @@ int EstPileVide(Pile* p)
 {
     return (p == NULL);
 }
-int Sommet(Pile* p)
+int sommet(Pile* p)
 {
     int s;
     if (EstPileVide(p))
@@ -45,7 +45,7 @@ Pile* Nettoyer(Pile* p)
     if(EstPileVide(p))
         return PileVide();
     else
-        Nettoyer(Depiler(p));
+        return Nettoyer(Depiler(p));
 }
 void Afficher(Pile* p)
 {

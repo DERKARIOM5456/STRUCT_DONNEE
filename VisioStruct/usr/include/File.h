@@ -1,8 +1,4 @@
-typedef struct Cell
-{
-  int Element;
-  struct Cell *Suivant;
-}TypeCellule;
+#include "Liste.h"
 typedef struct
 {
 	TypeCellule *Tete;
@@ -10,7 +6,6 @@ typedef struct
 }File;
 File FileVide();
 int EstFileVide(File);
-int EstFilePleine(File);
 void Enfiler(File*,int);
 int Defiler(File*,int*);
 void DetruireFile(File*);

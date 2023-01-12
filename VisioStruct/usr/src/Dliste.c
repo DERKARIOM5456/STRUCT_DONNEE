@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "dliste.h"
+#include "../include/Dliste.h"
 dliste DListeVide()
 { 
     dliste l=NULL;

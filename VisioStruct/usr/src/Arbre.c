@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "arbre.h"
+#include "../include/Arbre.h"
 arbre *nouveauA()
 {
     arbre *b;
@@ -108,14 +108,15 @@ arbre *InsereFeuilleG(arbre* b,int donnee)
     }
     return b;
 }
-int SommeElement(arbre* b)
+void SommeElement(arbre* b,int *p)
 {
     if(b==NULL)
         printf("\nArbre vide");
+    
     else
-        return b->donnee;
+        *p =  b->donnee;
 }
-int MaxElement(arbre* b)
+/*int MaxElement(arbre* b)
 {
     if(!EstArbreVide(b))
     {
@@ -125,4 +126,4 @@ int MaxElement(arbre* b)
 int MinElement(arbre* b)
 {
 
-}
+}*/

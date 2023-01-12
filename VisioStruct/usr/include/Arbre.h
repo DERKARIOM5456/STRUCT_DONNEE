@@ -15,8 +15,8 @@ arbre *InsereRacineD(arbre*,int);
 arbre *InsereRacineG(arbre*,int);
 arbre *InsereFeuilleD(arbre*,int);
 arbre *InsereFeuilleG(arbre*,int);
-int SommeElement(arbre*);
-int MaxElement(arbre*);
-int MinElement(arbre*);
+void SommeElement(arbre*,int*);
+//int MaxElement(arbre*);
+//int MinElement(arbre*);
 
 #endif

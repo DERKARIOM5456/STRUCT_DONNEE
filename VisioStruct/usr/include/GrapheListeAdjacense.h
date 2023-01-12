@@ -11,7 +11,7 @@ typedef struct CellArc
 }TypeArc;
 typedef TypeSommet *TypeGraphe;
 
-typedef struct
+typedef struct Sommet
 {
 	int num;
 }Sommet;

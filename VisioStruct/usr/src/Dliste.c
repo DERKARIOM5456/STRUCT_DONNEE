@@ -202,7 +202,7 @@ dliste ConvertListeInDListe(TypeCellule* l)
     }
     return ll;
 }
-dliste ClearDListe(dliste ll)
+/*dliste ClearDListe(dliste ll)
 {
     dliste ptr;
     while(ll!=NULL)
@@ -212,4 +212,4 @@ dliste ClearDListe(dliste ll)
         free(ptr);
     }
     return ll;
-}
+}*/

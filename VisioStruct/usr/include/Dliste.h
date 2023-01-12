@@ -1,4 +1,4 @@
-#include "../Liste/Liste.h"
+#include "Liste.h"
 #ifndef __DLISTE__
 #define __DLISTE__
 typedef struct dcell
@@ -23,5 +23,5 @@ void AffichageDL(dliste);
 void RechercheDL(dliste,int);
 dliste ConcatDlistePlus(dliste,dliste);
 dliste ConvertListeInDListe(TypeCellule*);
-dliste ClearDListe(dliste);
+//dliste ClearDListe(dliste);
 #endif

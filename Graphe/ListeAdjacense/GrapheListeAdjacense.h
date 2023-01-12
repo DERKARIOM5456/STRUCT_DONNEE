@@ -22,4 +22,3 @@ typedef struct
 	int **Matrice;
 }Graphe;
 Graphe *MatriceAdjacense(TypeGraphe G);
-TypeGraphe ListeAdjacense(Graphe *G);

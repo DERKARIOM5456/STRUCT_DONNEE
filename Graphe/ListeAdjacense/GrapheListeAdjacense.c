@@ -27,48 +27,7 @@ Graphe *MatriceAdjacense(TypeGraphe G)
 	}
 	return G1;
 }
-/*
-TypeGraphe ListeAdjacense(Graphe *G)
-{
-	TypeGraphe tmp,s,G;
-	TypeArc *a;
-	int i,j;
-	G=(TypeGraphe)malloc(sizeof(TypeSommet));
-	G->Numero=0;
-	G->ListeArc=NULL;
-	tmp=G;
-	for(i=1;i<G->n;i++)
-	{
-		tmp->Suivant=(TypeGraphe)malloc(sizeof(TypeCellule));
-		tmp->Numero=i;
-		tmp->ListeArc=NULL;
-		tmp=tmp->Suivant;
-	}
-	tmp->Suivant=NULL;
-	tmp=G;
-	for(i=0;i<G->n;i++,tmp=tmp->Suivant)
-	{
-		s=G;
-		for(j=0;j<G->n;j++,s=s->Suivant)
-		{
-			if(G->Matrice[i][j]==1)
-			{
-				tmp->ListeArc=(TypeArc*)malloc(sizeof(TypeArc));
-				tmp=tmp->ListeArc;
-				tmp->Extremite=s;
-			}
-			else
-			{
-				tmp->ListeArc=(TypeArc*)malloc(sizeof(TypeArc));
-				tmp->Suivant->Extremite=s;
-				tmp=tmp->Suivant;
-			}
-		}
-	}
-	return GP;
-}
 
-*/
 
 
 
